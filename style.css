@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Tilt+Warp&display=swap');
+
+:root{
+    --light-theme-background: #FFFBD3;
+    --light-theme-primary-color: #142633;
+    --light-theme-disabled-color: #E9E5BE;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    font-family: "Tilt Warp", sans-serif;
+
+    border: none;
+    outline: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--light-theme-background);
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#wrapper h1{
+    font-family: "Rubik Doodle Shadow", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+#inputs_container{
+    display: grid;
+    
+    grid-template-rows: repeat(5, 6.25rem);
+
+    gap: 1.5625rem; 
+}
+
+#inputs_container .linhas{
+    display: flex;
+    gap: 1.5625rem; 
+}
+
+#inputs_container .linhas input::first-letter{
+    vertical-align: middle;
+}
+
+#inputs_container .linhas input{
+    width: 6.25rem;
+    height: 100%;
+    border-radius: 0.625rem;
+    background-color: var(--light-theme-background);
+    border: 0.25rem solid var(--light-theme-disabled-color);
+    
+    padding-bottom: 1rem;
+    font-size: 5rem;
+    font-variant-caps: all-petite-caps;
+    text-align: center;
+    caret-color: transparent;
+
+    transition: border 0.08s ease-out;
+}
+
+#inputs_container .linhas input:focus{
+    border: 0.25rem solid var(--light-theme-primary-color);
+    border-bottom:  0.5625rem solid var(--light-theme-primary-color);
+}
+
+#inputs_container .linhas input[disabled]{
+    background-color: var(--light-theme-disabled-color);
+}
