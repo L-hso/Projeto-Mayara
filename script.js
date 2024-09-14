@@ -1,5 +1,7 @@
 window.addEventListener("load", ()=>{
-    const PALAVRAS_PERMITIDAS = ["acido", "chuva", "metil", "butil", "hextil"];
+    const PALAVRAS_PERMITIDAS = ["acido", "chuva", "metil", "butil"];
+
+    let palavra_da_vez = PALAVRAS_PERMITIDAS[Math.ceil(Math.random() * (PALAVRAS_PERMITIDAS.length-1))]
 
     const inputs_linhas = document.querySelectorAll("#inputs_container .linhas");
     
@@ -9,8 +11,8 @@ window.addEventListener("load", ()=>{
     
     window.addEventListener("keydown", (e)=>{
         if(e.key == "Enter"){    
-
-            let palavra = Array.from(inputs_linhas[linha_atual].children).reduce((a,b)=> a + b.value, "");
+            alert(palavra_da_vez);
+            let palavra = Array.from(inputs_linhas[linha_atual].children).reduce((a,b)=> a + b.value, "").toLowerCase();
     
             if(palavra.length < 5){
                 document.querySelector("#mensagem_de_erro").textContent = "Só palavras com 5 letras";
@@ -22,8 +24,25 @@ window.addEventListener("load", ()=>{
                     document.querySelector("#mensagem_de_erro").textContent = "Essa palavra não é aceita";
 
                     document.querySelector("#mensagem_de_erro").style.display = "block";
+
                 } else {
-                    
+                    Array.from(inputs_linhas[linha_atual].children).forEach((el, ind)=>{
+                        if(palavra_da_vez.includes(el.value)){
+                            if(palavra_da_vez.indexOf(el.value) == ind){
+                                el.classList = "input_acerto";
+                            } else {
+                                el.classList = "input_acertoparcial";
+                            }
+                        } else {
+                            el.classList = "input_erro";
+                        }
+
+                        el.setAttribute("disabled", "true")
+                    })
+
+                    linha_atual++;
+
+                    Array.from(inputs_linhas[linha_atual].children).forEach((el)=> el.removeAttribute("disabled"))
                 }
             }
 

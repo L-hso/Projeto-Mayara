@@ -112,19 +112,19 @@ body {
   background-color: var(--light-theme-disabled-color);
 }
 
-#inputs_container .linhas .input_acerto {
+#inputs_container .linhas .input_acerto[disabled] {
   background-color: var(--light-theme-correct-color);
   border-color: var(--light-theme-correct-color);
   color: var(--light-theme-primary-color);
 }
 
-#inputs_container .linhas .input_erro {
+#inputs_container .linhas .input_erro[disabled] {
   background-color: var(--light-theme-primary-color);
   border-color: var(--light-theme-primary-color);
   color: var(--light-theme-disabled-color);
 }
 
-#inputs_container .linhas .input_acertoparcial {
+#inputs_container .linhas .input_acertoparcial[disabled] {
   background-color: var(--light-theme-nearly-color);
   border-color: var(--light-theme-nearly-color);
   color: var(--light-theme-primary-color);
