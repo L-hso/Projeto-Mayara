@@ -195,10 +195,10 @@ body {
 
 @keyframes shake {
   0% {
-    transform: translateX(-20%);
+    transform: translateX(-15%);
   }
   50% {
-    transform: translateX(20%);
+    transform: translateX(15%);
   }
   75% {
     transform: translateX(-5%);
