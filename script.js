@@ -14,11 +14,13 @@ window.addEventListener("load", ()=>{
     
             if(palavra.length < 5){
                 document.querySelector("#mensagem_de_erro").textContent = "Só palavras com 5 letras";
+
                 document.querySelector("#mensagem_de_erro").style.display = "block";
             } else { 
 
                 if (!PALAVRAS_PERMITIDAS.includes(palavra)){
                     document.querySelector("#mensagem_de_erro").textContent = "Essa palavra não é aceita";
+
                     document.querySelector("#mensagem_de_erro").style.display = "block";
                 } else {
                     
@@ -27,7 +29,6 @@ window.addEventListener("load", ()=>{
 
         } else {
             document.querySelector("#mensagem_de_erro").style.display = "none";
-
             
         }
     })
@@ -39,7 +40,7 @@ window.addEventListener("load", ()=>{
         
              if(REGEX_LETRAS.test(e.key)){
                 el.value = e.key;
-                console.log("É daqui msm loco")
+
              } else if(e.key == "Backspace"){
                 el.value = "";
              }
