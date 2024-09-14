@@ -94,13 +94,15 @@ window.addEventListener("load", () => {
             input.setAttribute("disabled", "true");
           }
         );
+
         linha_atual++;
         // Libera o próximo input se a palavra estiver incorreta
         if (palavra != palavra_da_vez && linha_atual != 4) {
           Array.from(inputs_linhas[linha_atual].children).forEach((el) =>
             el.removeAttribute("disabled")
           );
-
+        
+        Array.from(inputs_linhas[linha_atual].children)[0].focus()
           Array.from(inputs_linhas[linha_atual].children).forEach((el, ind) => {
             el.addEventListener("keydown", (i) => {
               switch (i.key) {
@@ -139,10 +141,12 @@ window.addEventListener("load", () => {
             "#info_final #painel_de_reset h1"
           ).textContent = "Você ganhou!";
           document.querySelector("#info_final").style.display = "flex";
+
         } else {
           document.querySelector(
             "#info_final #painel_de_reset h1"
           ).textContent = "Você perdeu!";
+
           document.querySelector("#info_final").style.display = "flex";
         }
       }
