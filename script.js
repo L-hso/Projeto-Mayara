@@ -181,7 +181,7 @@ window.addEventListener("load", () => {
 
     document.querySelector("#btn_fechar").addEventListener("click",()=>{
       fundo_escuro.style.display = "none";
-      document.querySelector("#fundo_escuro #painel_de_config").style.display = "block";
+      document.querySelector("#fundo_escuro #painel_de_config").style.display = "none";
 
     })
   })
