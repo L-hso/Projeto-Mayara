@@ -191,7 +191,7 @@ window.addEventListener("load", () => {
   const dicas_btn = document.querySelector("#dicas");
 
   dicas_btn.addEventListener("click", ()=>{
-    if(dicas_btn.dataset.usou == "false"){
+    if(dicas_btn.dataset.usou == "false" && !jogo_acabou){
       let random_ind = Math.ceil(Math.random() * 4);
   
       inputs_linhas[linha_atual].children.item(random_ind).value = palavra_da_vez[random_ind];
