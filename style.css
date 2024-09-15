@@ -100,7 +100,8 @@ body {
   text-align: center;
   caret-color: transparent;
 
-  transition: border 0.08s ease-out;
+  transition: border 0.125s ease-out;
+
 }
 
 #inputs_container .linhas input:focus {
@@ -146,7 +147,7 @@ body {
 }
 
 
-#info_final{
+#fundo_escuro{
   display: none;
   justify-content: center;
   align-items: center;
@@ -162,8 +163,8 @@ body {
   transform: translate(-50%, -50%);
 }
 
-#info_final #painel_de_reset{
-  display: flex;
+#fundo_escuro #painel_de_reset{
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -176,11 +177,11 @@ body {
   animation: grow 0.23s ease;
 }
 
-#info_final #painel_de_reset h1{
+#fundo_escuro #painel_de_reset h1{
   font-weight: 400;
 }
 
-#info_final #painel_de_reset #btn_reset{
+#fundo_escuro #painel_de_reset #btn_reset{
   padding: 0.5rem 1.25rem;
 
   background-color: var(--light-theme-primary-color);
@@ -191,6 +192,42 @@ body {
   color: var(--light-theme-background);
 
   cursor: pointer;
+}
+
+
+#fundo_escuro #painel_de_config{
+  position: relative;
+  display: none;
+  gap: 2rem;
+
+  width: 35rem;
+  height: 20rem; 
+  padding: 3rem 2rem;
+  background-color: var(--light-theme-background);
+  color: var(--light-theme-primary-color);
+
+  animation: grow 0.23s ease;
+}
+
+#fundo_escuro #painel_de_config #btn_fechar{
+  position: absolute;
+  right: 4%;
+  top: 5%;
+
+  background-color: transparent;
+  
+  cursor: pointer;
+}
+
+#fundo_escuro #painel_de_config ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem; 
+}
+
+#fundo_escuro #painel_de_config ul li {
+  font-size: 1.25rem;
 }
 
 @keyframes shake {
