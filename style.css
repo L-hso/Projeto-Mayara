@@ -83,14 +83,13 @@ body {
 
 #inputs_container .linhas {
   display: grid;
-  grid-template-columns: repeat(5, 6rem);
+  grid-template-columns: repeat(5, minmax(3rem, 5rem));
   gap: 1rem;
 }
 
 #inputs_container .linhas input {
-
-  width: 6rem;
-  height: 100%;
+  width: 1.25em;
+  height: 1.25em;
   border-radius: 0.625rem;
   background-color: var(--light-theme-background);
   border: 0.25rem solid var(--light-theme-disabled-color);
