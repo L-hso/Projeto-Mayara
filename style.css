@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Tilt+Warp&display=swap");
 
 :root {
-  --light-theme-background: #fdfbde;
+  --light-theme-secondary-color: #fdfbde;
   --light-theme-primary-color: #12232e;
   --light-theme-disabled-color: #e9e6c7;
   --light-theme-correct-color: #63ae51;
@@ -30,7 +30,7 @@ body {
   align-items: center;
 
   gap: 2rem;
-  background-color: var(--light-theme-background);
+  background-color: var(--light-theme-secondary-color);
 }
  
 #wrapper {
@@ -91,7 +91,7 @@ body {
   width: 1.25em;
   height: 1.25em;
   border-radius: 0.625rem;
-  background-color: var(--light-theme-background);
+  background-color: var(--light-theme-secondary-color);
   border: 0.25rem solid var(--light-theme-disabled-color);
 
   padding-bottom: 1rem;
@@ -141,7 +141,7 @@ body {
 
   font-size: 1.5rem;
   text-align: center;
-  color: var(--light-theme-background);
+  color: var(--light-theme-secondary-color);
 
   animation: shake 0.2s ease-in-out;
 }
@@ -171,7 +171,7 @@ body {
   gap: 2rem;
 
   padding: 2rem 4rem;
-  background-color: var(--light-theme-background);
+  background-color: var(--light-theme-secondary-color);
   color: var(--light-theme-primary-color);
 
   animation: grow 0.23s ease;
@@ -189,7 +189,7 @@ body {
   font-weight: 400;
   font-size: 1.2rem;
   text-align: center;
-  color: var(--light-theme-background);
+  color: var(--light-theme-secondary-color);
 
   cursor: pointer;
 }
@@ -203,7 +203,7 @@ body {
   width: 35rem;
   height: 20rem; 
   padding: 3rem 2rem;
-  background-color: var(--light-theme-background);
+  background-color: var(--light-theme-secondary-color);
   color: var(--light-theme-primary-color);
 
   animation: grow 0.23s ease;

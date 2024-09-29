@@ -7,12 +7,11 @@ window.addEventListener("load", () => {
     "metil",
     "butil",
     "octil",
-    "bario",
-    "otoso",
+    "bario"
   ];
   PALAVRAS_PERMITIDAS = PALAVRAS_PERMITIDAS.map((e) => e.toLowerCase());
 
-  let palavra_da_vez = "asoti";
+  let palavra_da_vez = PALAVRAS_PERMITIDAS[Math.random() * (PALAVRAS_PERMITIDAS.length - 1)];
 
   const REGEX_LETRAS = /\b[a-zA-Z]\b/;
 
