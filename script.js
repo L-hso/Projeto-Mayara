@@ -7,11 +7,54 @@ window.addEventListener("load", () => {
     "metil",
     "butil",
     "octil",
-    "bario"
+    "bario",
+    "litio",
+    "cesio",
+    "radio",
+    "sodio",
+    "itrio",
+    "fenol",
+    "cerio",
+    "renio",
+    "torio",
+    "osmio",
+    "ferro",
+    "ester",
+    "helio",
+    "prata",
+    "rodio",
+    "cobre",
+    "zinco",
+    "galio",
+    "indio",
+    "talio",
+    "erbio",
+    "fluor",
+    "bromo",
+    "curio",
+    "tulio",
+    "amida",
+    "amina",
+    "gases",
+    "acida",
+    "etano",
+    "eteno",
+    "etino",
+    "anion",
+    "metal",
+    "fusao",
+    "vapor",
+    "pilha",
+    "anodo",
+    "chuva",
+    "calor",
+    "troca",
+    ""
   ];
+
   PALAVRAS_PERMITIDAS = PALAVRAS_PERMITIDAS.map((e) => e.toLowerCase());
 
-  let palavra_da_vez = PALAVRAS_PERMITIDAS[Math.ceil(Math.random() * (PALAVRAS_PERMITIDAS.length - 1))];
+  let palavra_da_vez = PALAVRAS_PERMITIDAS[Math.ceil(Math.random() * Math.random() * (PALAVRAS_PERMITIDAS.length - 1))];
 
   const REGEX_LETRAS = /\b[a-zA-Z]\b/;
 
