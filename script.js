@@ -1,22 +1,52 @@
-const PALAVRAS_PERMITIDAS = ["Ácido", "Chuva", "Metil", "Butil", "Hextil"];
+window.addEventListener("load", ()=>{
+    const PALAVRAS_PERMITIDAS = ["acido", "chuva", "metil", "butil", ];
 
-const inputs_linhas = document.querySelectorAll("#inputs_container .linhas");
+    const inputs_linhas = document.querySelectorAll("#inputs_container .linhas");
+    
+    const REGEX_LETRAS = /\b[a-zA-Z]\b/;
+   
+    let linha_atual = 0;
+    
+    window.addEventListener("keydown", (e)=>{
+        if(e.key == "Enter"){    
 
-const REGEX_LETRAS = /[a-z]/;
+            let palavra = Array.from(inputs_linhas[linha_atual].children).reduce((a,b)=> a + b.value, "");
+    
+            if(palavra.length < 5){
+                document.querySelector("#mensagem_de_erro").textContent = "Só palavras com 5 letras";
+                document.querySelector("#mensagem_de_erro").style.display = "block";
+            } else { 
 
-let linha_atual = 0;
+                if (!PALAVRAS_PERMITIDAS.includes(palavra)){
+                    document.querySelector("#mensagem_de_erro").textContent = "Essa palavra não é aceita";
+                    document.querySelector("#mensagem_de_erro").style.display = "block";
+                } else {
+                    
+                }
+            }
 
-window.addEventListener("keypress", (e)=>{
-    if(e.key == "Enter"){
-                                                            
-        if(Array.from(inputs_linhas[linha_atual].childNodes).some(e=>e.value == "")){
-            document.querySelector("#mensagem_de_erro").style.visibility = "visible";
-        } else { 
-            document.querySelector("#mensagem_de_erro").style.visibility = "hidden";
-            console.log(inputs_linhas[linha_atual].children)
+        } else {
+            document.querySelector("#mensagem_de_erro").style.display = "none";
+
+            
         }
-
-    } else if(REGEX_LETRAS.test(e.key)) {
+    })
+    
+    
+    Array.from(inputs_linhas[linha_atual].children).forEach((el)=>{
+                
+        el.addEventListener("keydown", (e)=>{
         
-    }
+             if(REGEX_LETRAS.test(e.key)){
+                el.value = e.key;
+                console.log("É daqui msm loco")
+             } else if(e.key == "Backspace"){
+                el.value = "";
+             }
+
+             
+        })
+        
+    })
 })
+
