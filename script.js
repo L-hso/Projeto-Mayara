@@ -49,12 +49,17 @@ window.addEventListener("load", () => {
     "chuva",
     "calor",
     "troca",
-    ""
+    "",
   ];
 
   PALAVRAS_PERMITIDAS = PALAVRAS_PERMITIDAS.map((e) => e.toLowerCase());
 
-  let palavra_da_vez = PALAVRAS_PERMITIDAS[Math.ceil(Math.random() * Math.random() * (PALAVRAS_PERMITIDAS.length - 1))];
+  let palavra_da_vez =
+    PALAVRAS_PERMITIDAS[
+      Math.ceil(
+        Math.random() * Math.random() * (PALAVRAS_PERMITIDAS.length - 1)
+      )
+    ];
 
   const REGEX_LETRAS = /\b[a-zA-Z]\b/;
 
@@ -216,23 +221,25 @@ window.addEventListener("load", () => {
     }
   });
 
-  //Configs
-
-  const config_btn = document.querySelector("#configuracoes");
-
-  config_btn.addEventListener("click", () => {
-    fundo_escuro.style.display = "flex";
-    document.querySelector("#fundo_escuro #painel_de_config").style.display =
-      "block";
-
-    document.querySelector("#btn_fechar").addEventListener("click", () => {
+  // Botões de fechar
+  document.querySelectorAll("#btn_fechar").forEach((e) => {
+    e.addEventListener("click", () => {
       fundo_escuro.style.display = "none";
-      document.querySelector("#fundo_escuro #painel_de_config").style.display =
-        "none";
+      e.parentNode.style.display = "none";
     });
   });
 
-  //Dicas
+  // Creditos
+
+  const creditos_btn = document.querySelector("#creditos");
+
+  creditos_btn.addEventListener("click", () => {
+    fundo_escuro.style.display = "flex";
+    document.querySelector("#fundo_escuro #painel_de_creditos").style.display =
+      "block";
+  });
+
+  // Dicas
   const dicas_btn = document.querySelector("#dicas");
 
   dicas_btn.addEventListener("click", () => {
@@ -248,5 +255,14 @@ window.addEventListener("load", () => {
         .setAttribute("disabled", "true");
       dicas_btn.dataset.usou = "true";
     }
+  });
+
+  // Ajuda
+  const ajuda_btn = document.querySelector("#ajuda");
+
+  ajuda_btn.addEventListener("click", () => {
+    fundo_escuro.style.display = "flex";
+    document.querySelector("#fundo_escuro #painel_de_ajuda").style.display =
+      "block";
   });
 });
