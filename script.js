@@ -49,14 +49,13 @@ window.addEventListener("load", () => {
     "chuva",
     "calor",
     "troca",
-    "",
   ];
 
   PALAVRAS_PERMITIDAS = PALAVRAS_PERMITIDAS.map((e) => e.toLowerCase());
 
   let palavra_da_vez =
     PALAVRAS_PERMITIDAS[
-      Math.ceil(
+      Math.round(
         Math.random() * Math.random() * (PALAVRAS_PERMITIDAS.length - 1)
       )
     ];
